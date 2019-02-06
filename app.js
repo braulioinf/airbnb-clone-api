@@ -24,6 +24,7 @@ const app = express();
 const authRouter = require('./routes/auth');
 const indexRouter = require('./routes/index');
 const userRouter = require('./routes/user');
+const houseRouter = require('./routes/house');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -34,6 +35,7 @@ app.use(cookieParser());
 app.use('/', indexRouter); // /*
 app.use('/auth', authRouter); // /auth/*
 app.use('/user', userRouter); // /user/*
+app.use('/house', houseRouter); // /house/*
 
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {
